@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link th:href="@{/css/MainStyles.css}" href="/css/MainStyles.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Login Form -->
+        <form>
+            <h2>Logged in as: <span th:text="${username}"></span></h2>
+            <h2>Has authorities: <span th:text="${authority}"></span></h2>
+        </form>
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" th:href="@{/logout}">Logout</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

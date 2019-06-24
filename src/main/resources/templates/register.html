@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link th:href="@{/css/MainStyles.css}" href="/css/MainStyles.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Login Form -->
+        <form method="POST" th:method="POST" th:action="@{/register}" th:object="${userModel}">
+            <input th:field="*{username}" type="text" id="login" class="fadeIn second" name="login" placeholder="Username">
+            <input th:field="*{password}"type="text" id="password" class="fadeIn third" name="password" placeholder="Password">
+            <input th:field="*{passwordConfirm}"type="text" id="passwordConfirm" class="fadeIn third" name="passwordConfirm" placeholder="Repeat password">
+            <div class="form-group">
+                <label class="input-label">Admin: </label>
+                <input th:field="*{isAdmin}" name="isAdmin" value="true" type="checkbox">
+            </div>
+            <input type="submit" class="fadeIn fourth" value="Register!">
+        </form>
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" onclick='javascript:window.history.back()' type="button">Go back!</a>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
