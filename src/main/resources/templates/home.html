@@ -10,14 +10,10 @@
 <body>
 <div class="wrapper fadeInDown">
     <div id="formContent">
-        <!-- Tabs Titles -->
-
-        <!-- Login Form -->
         <form>
             <h2>Logged in as: <span th:text="${username}"></span></h2>
             <h2>Has authorities: <span th:text="${authority}"></span></h2>
         </form>
-        <!-- Remind Passowrd -->
         <div id="formFooter">
             <a class="underlineHover" th:href="@{/logout}">Logout</a>
         </div>

@@ -9,15 +9,12 @@
 <body>
 <div class="wrapper fadeInDown">
     <div id="formContent">
-        <!-- Tabs Titles -->
-        <!-- Login Form -->
         <form th:action="@{/login}" method="post" name="f">
             <input type="text" id="username" class="fadeIn second" name="username" placeholder="login">
             <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
                 <p th:if="${#error=true}" th:text="${error}"></p>
             <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
-        <!-- Remind Passowrd -->
         <div id="formFooter">
             <a class="underlineHover" th:href="@{/register}">Register a new user!</a>
         </div>

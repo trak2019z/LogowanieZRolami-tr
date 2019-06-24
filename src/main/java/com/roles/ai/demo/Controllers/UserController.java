@@ -1,24 +1,20 @@
 package com.roles.ai.demo.Controllers;
 
 import com.roles.ai.demo.Components.UserValidator;
-import com.roles.ai.demo.Entities.Role;
 import com.roles.ai.demo.Entities.User;
 import com.roles.ai.demo.Services.SecurityService;
 import com.roles.ai.demo.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashSet;
-import java.util.Set;
+
 
 @Controller
 public class UserController {
@@ -43,13 +39,8 @@ public class UserController {
             System.out.println(bindingResult.toString());
             return "register";
         }
-
-        System.out.println(user.getIsAdmin());
-
         userService.save(user);
-
         securityService.autoLogin(user.getUsername(), user.getPasswordConfirm());
-
         return "redirect:/home";
 
     }

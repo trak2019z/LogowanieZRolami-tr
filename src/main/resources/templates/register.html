@@ -9,9 +9,6 @@
 <body>
 <div class="wrapper fadeInDown">
     <div id="formContent">
-        <!-- Tabs Titles -->
-
-        <!-- Login Form -->
         <form method="POST" th:method="POST" th:action="@{/register}" th:object="${userModel}">
             <input th:field="*{username}" type="text" id="login" class="fadeIn second" name="login" placeholder="Username">
             <input th:field="*{password}"type="text" id="password" class="fadeIn third" name="password" placeholder="Password">
@@ -22,7 +19,6 @@
             </div>
             <input type="submit" class="fadeIn fourth" value="Register!">
         </form>
-        <!-- Remind Passowrd -->
         <div id="formFooter">
             <a class="underlineHover" onclick='javascript:window.history.back()' type="button">Go back!</a>
         </div>
