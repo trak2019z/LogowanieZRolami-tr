@@ -42,7 +42,6 @@ public class UserController {
         userService.save(user);
         securityService.autoLogin(user.getUsername(), user.getPasswordConfirm());
         return "redirect:/home";
-
     }
 
     @GetMapping("/login")
